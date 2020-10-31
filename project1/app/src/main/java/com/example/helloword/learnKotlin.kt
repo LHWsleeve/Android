@@ -14,6 +14,27 @@ fun main(){
     println(cellphone1)
     println("cellphone1 equals cellphone2 = " + (cellphone1==cellphone2))
     Singleton.singletonTest()
+    val list = listOf("Apple","Banna","Pears")
+    for (fruit in list){
+        println(fruit)
+    }
+    val Mlist = mutableListOf("234","2343","34r23",2)
+    Mlist.add("2sf")
+    for (i in Mlist){
+        print(i)
+        println(" " + i.javaClass)
+
+    }
+    val listNumber = listOf("s232","fefe","e4rt43f","h34r23")
+    val maxLength = listNumber.maxBy { it.length }
+    println("max length ： "+ maxLength)
+
+    val lamda = {case :String -> case.toUpperCase()}
+    val upCase = listNumber.filter { it.length>4 }.map { it.toUpperCase() }
+    for (case in upCase){
+        println(case)
+    }
+
 }
 fun forMethod(){
     for (i in 0 until 10 step 2){
