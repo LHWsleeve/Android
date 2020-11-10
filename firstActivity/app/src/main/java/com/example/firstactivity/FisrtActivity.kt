@@ -1,7 +1,11 @@
 package com.example.firstactivity
 
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
@@ -27,8 +31,68 @@ class FisrtActivity : AppCompatActivity() {
 //            Toast.makeText(this,"你点击了button 1", Toast.LENGTH_LONG).show()
 //        }
 
-        button1.setOnClickListener { finish() }
+        //退出当前页面
+//        button1.setOnClickListener { finish() }
 
+        //显示intent
+//        button1.setOnClickListener {
+//        Toast.makeText(this,"你点击了显示",Toast.LENGTH_LONG).show()
+//            val intent = Intent(this,SecondActivity::class.java)
+//            startActivity(intent)
+//        }
+
+        //隐式intent
+//        button1.setOnClickListener {
+//            Toast.makeText(this,"你点击了隐式",Toast.LENGTH_LONG).show()
+//            val intent = Intent("com.example.firstactivity.ACTION_START")
+//            intent.addCategory("com.example.firstactivity.MU_CATEGORY")
+//            startActivity(intent)
+//        }
+
+    //intent调用系统网页
+//       button1.setOnClickListener {
+//           val intent = Intent(Intent.ACTION_VIEW)
+//           intent.data = Uri.parse("https://www.baidu.com")
+//           startActivity(intent)
+//       }
+
+        //调用系统拨号界面
+//        button1.setOnClickListener {
+//            val intent = Intent(Intent.ACTION_DIAL)
+//            intent.data = Uri.parse("tel:10086")
+//            startActivity(intent)
+//        }
+
+        //intent 也可以传递数据
+//        button1.setOnClickListener {
+//            val data = "这是我传递的数据"
+//            val intent = Intent(this,SecondActivity::class.java)
+//            键值对的形式传输，前者是键，后者是传输的值
+//            intent.putExtra("extra_data",data)
+//            startActivity(intent)
+//        }
+        //返回数据给上一个activity
+        button1.setOnClickListener {
+            val intent = Intent(this,SecondActivity::class.java)
+            //第二个参数是请求码
+            startActivityForResult(intent,1)
+        }
+    }
+
+    /**
+     * requestcode:启动时传入的请求码
+     * result：返回数据时传入的处理结果
+     * data：返回数据的intent
+     * 由于每一个activity返回的数据都会回调到onAcitvityResult中，所以需要检查请求码，根据请求码，然后判断返回结果，最后处理数据
+     */
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when(requestCode){
+            1 -> if(resultCode == Activity.RESULT_OK){
+                 val returnedData = data?.getStringExtra("data_return")
+                Log.d("FirstActivity","返回的数据是 $returnedData")
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

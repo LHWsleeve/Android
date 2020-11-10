@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.firstactivity">
 
     <application
@@ -9,15 +10,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstActivity">
-<!--        Activity必须要注册在manifest里面才可以生效-->
-        <activity android:name=".FisrtActivity"
-            android:label="第一个Activity">
-<!--            label指定Activity标题栏的内容-->
+        <activity
+            android:name=".ThirdActivity"
+            android:label="第三个acitvity"
+            >
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+        </activity>
 
-<!--            设置为主Activity才能知道那个被启动-->
+        <activity
+            android:name=".SecondActivity"
+            android:label="第二个activity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="com.example.firstactivity.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.example.firstactivity.MU_CATEGORY" />
+            </intent-filter>
+        </activity> <!-- Activity必须要注册在manifest里面才可以生效 -->
+        <activity
+            android:name=".FisrtActivity"
+            android:label="第一个Activity">
+
+            <!-- label指定Activity标题栏的内容 -->
+
+
+            <!-- 设置为主Activity才能知道那个被启动 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
