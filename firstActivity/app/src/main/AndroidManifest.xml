@@ -20,8 +20,9 @@
                 <data android:scheme="https"/>
             </intent-filter>
         </activity>
-
+<!--        lanuchMode:新建返回栈-->
         <activity
+            android:launchMode="singleInstance"
             android:name=".SecondActivity"
             android:label="第二个activity">
             <intent-filter>
@@ -31,7 +32,14 @@
                 <category android:name="com.example.firstactivity.MU_CATEGORY" />
             </intent-filter>
         </activity> <!-- Activity必须要注册在manifest里面才可以生效 -->
+<!--        默认是standard模式，每次都新建一个activity放入栈顶
+singTop:检测当前栈顶是否是我们要的，不会无脑新建（存在有可能activity不在栈顶的情况，此时还是会重复新建activity）
+singleTask:检测整个栈中是否存在activity，如果存在，将activity之上的所有activity抛出，然后置为栈顶
+singleInstance:比较复杂，会启用一个新的返回栈来管理这个Activity(Task模式的特殊情况也可以)。在实现多个程序共享Activity的时候可以使用，
+因为前三种都只在一个返回栈中操作，不能共存。
+-->
         <activity
+            android:launchMode="singleTask"
             android:name=".FisrtActivity"
             android:label="第一个Activity">
 
