@@ -12,7 +12,7 @@ import android.widget.Button
 import android.widget.Toast
 import kotlinx.android.synthetic.main.fist_layout.*
 
-class FisrtActivity : AppCompatActivity() {
+class FisrtActivity : BaseAcitvity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        Log.d("FirstActivity",this.toString())
@@ -39,11 +39,11 @@ class FisrtActivity : AppCompatActivity() {
 //        button1.setOnClickListener { finish() }
 
         //显示intent
-        button1.setOnClickListener {
-        Toast.makeText(this,"你点击了显示",Toast.LENGTH_LONG).show()
-            val intent = Intent(this,SecondActivity::class.java)
-            startActivity(intent)
-        }
+//        button1.setOnClickListener {
+//        Toast.makeText(this,"你点击了显示",Toast.LENGTH_LONG).show()
+//            val intent = Intent(this,SecondActivity::class.java)
+//            startActivity(intent)
+//        }
 
         //隐式intent
 //        button1.setOnClickListener {
@@ -88,6 +88,11 @@ class FisrtActivity : AppCompatActivity() {
 //            startActivity(intent)
 //        }
 
+        //直接调用actionStart，并传入必要参数，即可按要求启动secondeAct。
+        // 此时的inent显示调用全在secondAct中，并且context这个上下文其实还是firstAct本身
+        button1.setOnClickListener {
+            SecondActivity.actionStart(this,"data1","data2")
+        }
     }
 
     /**
