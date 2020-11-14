@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:text="这是 textView"
+        android:gravity="center"
+        android:textColor="#00ff00"
+        android:textSize="24sp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:text="Button"/>
+<!--        android:textAllCaps="false"/>-->
+<!--    EditText允许用户在控件中更改数据，比如打字框
+    提示性文字：hint
+    解决输入过多的难看问题，限制行数:maxlines-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:hint="这里是用来提示的"
+        android:maxLines="2"
+        />
+
+</LinearLayout>
