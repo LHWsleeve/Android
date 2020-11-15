@@ -17,16 +17,42 @@
         android:layout_height="wrap_content"
         android:id="@+id/button"
         android:text="Button"/>
+<!--        android:onClick="onClick"-->
 <!--        android:textAllCaps="false"/>-->
 <!--    EditText允许用户在控件中更改数据，比如打字框
     提示性文字：hint
-    解决输入过多的难看问题，限制行数:maxlines-->
+    解决输入过多的难看问题，超过限制行数就会滚动:maxlines-->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
         android:hint="这里是用来提示的"
-        android:maxLines="2"
-        />
+        android:maxLines="2"/>
+<!--        android:textAllCaps="true"-->
+
+    <!--    ProgressBar:进度条
+    style:设置进度条样式
+    max：进度条最大值，可以在代码中动态修改-->
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"/>
+
+<!--    界面上站是一个图片-->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/imge_2"
+       />
+
+<!--    AlterDialog：当前界面弹出一个对话框，指定在所有界面元素之上
+屏蔽其他控件，用来警示作用.这是直接写在代码里的-->
+
+
+
+
 
 </LinearLayout>
