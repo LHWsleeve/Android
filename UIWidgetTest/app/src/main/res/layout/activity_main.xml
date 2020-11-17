@@ -51,42 +51,93 @@
 <!--&lt;!&ndash;    AlterDialog：当前界面弹出一个对话框，指定在所有界面元素之上-->
 <!--屏蔽其他控件，用来警示作用.这是直接写在代码里的&ndash;&gt;-->
 
-<!--4.3的项目-->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<!--4.3-LinearLayout的项目-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:orientation="horizontal"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
+<!--<EditText-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:id="@+id/inpurMessage"-->
+<!--    android:layout_weight="3"-->
+<!--    android:hint="Type something"/>-->
+
+<!--    <Button-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:id="@+id/send"-->
+<!--    android:text="send"-->
+<!--        android:layout_gravity="top"-->
+<!--        />-->
+
+<!--&lt;!&ndash;    <Button&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/button2"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:text="Buttpon2"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_gravity="center_vertical"&ndash;&gt;-->
+<!--&lt;!&ndash;        />&ndash;&gt;-->
+<!--&lt;!&ndash;    &ndash;&gt;-->
+<!--&lt;!&ndash;    <Button&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/button3"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:text="Buttpon3"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_gravity="bottom"&ndash;&gt;-->
+<!--&lt;!&ndash;        />&ndash;&gt;-->
+
+
+
+<!--</LinearLayout>-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<EditText
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:id="@+id/inpurMessage"
-    android:layout_weight="3"
-    android:hint="Type something"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Button 1"/>
 
     <Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/send"
-    android:text="send"
-        android:layout_gravity="top"
-        />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="Button 2"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_centerInParent="true"
+        android:text="Button 3"/>
 
-<!--    <Button-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/button2"-->
-<!--        android:text="Buttpon2"-->
-<!--        android:layout_gravity="center_vertical"-->
-<!--        />-->
-<!--    -->
-<!--    <Button-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/button3"-->
-<!--        android:text="Buttpon3"-->
-<!--        android:layout_gravity="bottom"-->
-<!--        />-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="Button 4"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Button 5"/>
 
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button6"
+        android:layout_above="@+id/button3"
+        android:layout_toLeftOf="@id/button3"
+        android:text="Button 6"/>
 
-</LinearLayout>
+</RelativeLayout>

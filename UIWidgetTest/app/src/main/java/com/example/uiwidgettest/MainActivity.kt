@@ -42,16 +42,16 @@ class MainActivity : AppCompatActivity() , OnClickListener{
 
         //AlterDialog：当前界面弹出一个对话框，指定在所有界面元素之上
         //屏蔽其他控件，用来警示作用
-        button.setOnClickListener {
-            //构建对话框
-            AlertDialog.Builder(this).apply {
-                setTitle("重要信息")
-                setCancelable(false)
-                setPositiveButton("OK"){dialog, which ->  }
-                setNegativeButton("Cancel"){dialog, which ->  }
-                show()
-            }
-        }
+//        button.setOnClickListener {
+//            //构建对话框
+//            AlertDialog.Builder(this).apply {
+//                setTitle("重要信息")
+//                setCancelable(false)
+//                setPositiveButton("OK"){dialog, which ->  }
+//                setNegativeButton("Cancel"){dialog, which ->  }
+//                show()
+//            }
+//        }
     }
 
     override fun onClick(v: View?) {
