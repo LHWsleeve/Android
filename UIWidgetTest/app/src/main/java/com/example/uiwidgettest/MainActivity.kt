@@ -17,6 +17,11 @@ class MainActivity : AppCompatActivity() , OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //4.4 讲系统自带的标题栏隐藏
+        supportActionBar?.hide()
+
+
+
         //Java函数式API方式编写监听器
 //        button.setOnClickListener {
 //            var toString = editText.text.toString()
