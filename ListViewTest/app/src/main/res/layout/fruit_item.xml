@@ -8,7 +8,7 @@
     <!--    android:layout_height="match_parent"-->
     <!--    android:id="@+id/listView"/>-->
 
-    <!--    定制ListView，组合键，不是显示的ListView-->
+    <!--    定制ListView，组合键，应该是放在Main布局的ListView上-->
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +29,11 @@ class MainActivity : AppCompatActivity() {
         //传入apapter是一样的，主要是自定义了一个adapter用来接受泛型数据，同样，布局也要自定义。
         // 不能再像之前那样直接在xml中写一个ListView控键，儿是组合键
         listView.adapter=adapter
+        //及其重要的ListView点击效果！,setOnItemClickListener中接受四个参数，但是只有第三个参数被用到，所以其他用下划线代替
+        listView.setOnItemClickListener{_,_,postion,_->
+            val fruit = fruitList[postion]
+            Toast.makeText(this,fruit.name,Toast.LENGTH_SHORT).show()
+        }
 
     }
 
