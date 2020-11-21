@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="60dp">
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+<!--    以上是瀑布布局-->
+
+<!--    android:layout_width="80dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="vertical">-->
+<!--    上面是横向布局的方式-->
+
     <!--    默认的ListView-->
 
     <!--    定制ListView，组合键，应该是放在Main布局的ListView上-->
@@ -9,13 +18,22 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:id="@+id/friutImage"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="10dp"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"/>
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/friutName"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        />-->
+<!--    以上是横向布局-->
+<!--以下是瀑布布局-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/friutName"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="10dp"
+        android:layout_gravity="left"
+        android:layout_marginTop="10dp"
         />
 </LinearLayout>
