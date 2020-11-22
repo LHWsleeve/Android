@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recyclerviewtest.Fruit
 
 class FruitAdapter(val fruitList:List<Fruit>) :RecyclerView.Adapter<FruitAdapter.ViewHolder>(){
 
@@ -19,6 +19,7 @@ class FruitAdapter(val fruitList:List<Fruit>) :RecyclerView.Adapter<FruitAdapter
     //加载fruit_item，返回ViewHolder实例
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.fruit_item,parent,false)
+        //一开始我直接按照书上将监听器注册在这里，但是adapterPosition函数一直返回-1，解决方法在onBindViewHolder
         return ViewHolder(view)
     }
 
@@ -30,6 +31,19 @@ class FruitAdapter(val fruitList:List<Fruit>) :RecyclerView.Adapter<FruitAdapter
         holder.fruitImage.setImageResource(fruit.imageId)
         holder.fruitName.text=fruit.name
 
+        /**
+         * 通过View添加点击事件,并且和ListView不同(只能点击整个子项)，这种方式可以点击子项中任意模块
+         * 注意：
+         * -1是因为layout布局没有完成导致的..
+         * 解决方法:onBindViewHolder...并且建议所有onClickListener的代码都放在这里...
+         */
+        holder.itemView.setOnClickListener {
+            Toast.makeText(holder.itemView.context,"你点击了view ${fruit.name}",Toast.LENGTH_SHORT).show()
+        }
+
+        holder.fruitImage.setOnClickListener {
+            Toast.makeText(holder.itemView.context,"你点击了view ${fruit.imageId}",Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount()= fruitList.size
