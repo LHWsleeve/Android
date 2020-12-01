@@ -5,17 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.uibestpriactice.pojo.LeftViewHolder
 import com.example.uibestpriactice.pojo.Msg
+import com.example.uibestpriactice.pojo.MsgViewHolder
+import com.example.uibestpriactice.pojo.RightViewHolder
 
-class MsgAdapter(val msgList:List<Msg>):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    inner class LeftViewHolder(view: View):RecyclerView.ViewHolder(view){
-        val leftMsg:TextView = view.findViewById(R.id.leftMsg)
-    }
-
-    inner class RightViewHolder(view: View):RecyclerView.ViewHolder(view){
-        val rightMsg:TextView = view.findViewById(R.id.rightMsg)
-    }
+class MsgAdapter(val msgList:List<Msg>):RecyclerView.Adapter<MsgViewHolder>() {
 
     override fun getItemViewType(position: Int): Int {
         val msg =  msgList[position]
@@ -31,7 +26,7 @@ class MsgAdapter(val msgList:List<Msg>):RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MsgViewHolder, position: Int) {
         val msg = msgList[position]
         when(holder){
             is LeftViewHolder -> holder.leftMsg.text=msg.content
